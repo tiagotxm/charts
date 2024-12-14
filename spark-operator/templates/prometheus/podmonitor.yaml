@@ -38,7 +38,7 @@ spec:
   namespaceSelector:
     matchNames:
     # - {{ .Release.Namespace }}
-    - {{ .Values.spark.jobNamespaces }}
+    {{ toYaml .Values.spark.jobNamespaces | indent 4 }}
   selector:
     matchLabels:
       {{- include "spark-operator.selectorLabels" . | nindent 6 }}
