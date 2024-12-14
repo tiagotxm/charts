@@ -68,6 +68,7 @@ Selector labels
 {{- define "spark-operator.selectorLabels" -}}
 app.kubernetes.io/name: {{ include "spark-operator.name" . }}
 app.kubernetes.io/instance: {{ .Release.Name }}
+app: spark-job
 {{- end }}
 
 {{/*
