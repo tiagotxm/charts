@@ -37,7 +37,8 @@ spec:
   jobLabel: {{ .Values.prometheus.podMonitor.jobLabel }}
   namespaceSelector:
     matchNames:
-    - {{ .Release.Namespace }}
+    # - {{ .Release.Namespace }}
+    - {{ .Values.spark.jobNamespaces }}
   selector:
     matchLabels:
       {{- include "spark-operator.selectorLabels" . | nindent 6 }}
