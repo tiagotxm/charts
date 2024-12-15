@@ -348,7 +348,7 @@ prometheus:
   podMonitor:
     # -- Specifies whether to create pod monitor.
     # Note that prometheus metrics should be enabled as well.
-    create: true
+    create: false
     # -- Pod monitor labels
     labels:
       app: spark
